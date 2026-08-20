@@ -1,23 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
-    android:padding="24dp">
+    android:background="#0F0F1A">
 
+    <!-- Viewer's remote screen render surface, hidden until connected -->
+    <org.webrtc.SurfaceViewRenderer
+        android:id="@+id/remoteRenderer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <!-- Location overlay, shown once a location update arrives from the Host -->
     <TextView
-        android:id="@+id/statusText"
+        android:id="@+id/locationText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="O — not signed in"
-        android:textSize="16sp"
-        android:layout_marginBottom="24dp" />
+        android:layout_gravity="top|center_horizontal"
+        android:layout_marginTop="24dp"
+        android:padding="8dp"
+        android:background="#801A1A2E"
+        android:textColor="#00D9FF"
+        android:textSize="13sp"
+        android:visibility="gone" />
 
-    <Button
-        android:id="@+id/signInButton"
+    <LinearLayout
+        android:id="@+id/setupPanel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Sign in with Google" />
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="32dp">
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/titleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="O"
+            android:textSize="42sp"
+            android:textStyle="bold"
+            android:textColor="#00D9FF"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/statusText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Choose a role"
+            android:textSize="16sp"
+            android:textColor="#AAAAAA"
+            android:layout_marginBottom="24dp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="24dp">
+
+            <Button
+                android:id="@+id/hostRoleButton"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:text="Be Host"
+                android:layout_marginEnd="12dp" />
+
+            <Button
+                android:id="@+id/viewerRoleButton"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:text="Be Viewer" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/roomCodeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="#00D9FF"
+            android:layout_marginBottom="16dp" />
+
+        <EditText
+            android:id="@+id/roomCodeInput"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:hint="Enter 6-digit code"
+            android:inputType="number"
+            android:maxLength="6"
+            android:textAlignment="center"
+            android:visibility="gone"
+            android:layout_marginBottom="16dp" />
+
+        <Button
+            android:id="@+id/actionButton"
+            android:layout_width="220dp"
+            android:layout_height="56dp"
+            android:text="Start Sharing"
+            android:visibility="gone"
+            android:layout_marginBottom="16dp" />
+
+        <Button
+            android:id="@+id/accessibilityButton"
+            android:layout_width="220dp"
+            android:layout_height="48dp"
+            android:text="Enable Accessibility Access"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+</FrameLayout>

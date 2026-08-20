@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">O</string>
+    <string name="accessibility_service_description">Allows O to inject taps and swipes sent from a paired Viewer device.</string>
 </resources>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="32dp"
+    android:background="#0F0F1A">
+
+    <!-- PIN entry step -->
+    <LinearLayout
+        android:id="@+id/pinStep"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enter PIN"
+            android:textSize="22sp"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="16dp" />
+
+        <EditText
+            android:id="@+id/pinInput"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:inputType="numberPassword"
+            android:maxLength="4"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:layout_marginBottom="16dp" />
+
+        <Button
+            android:id="@+id/pinSubmitButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Unlock" />
+
+        <TextView
+            android:id="@+id/pinErrorText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Incorrect PIN"
+            android:textColor="#FF6B6B"
+            android:visibility="gone"
+            android:layout_marginTop="12dp" />
+    </LinearLayout>
+
+    <!-- Settings step, shown after correct PIN -->
+    <LinearLayout
+        android:id="@+id/settingsStep"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Parent Settings"
+            android:textSize="22sp"
+            android:textColor="#00D9FF"
+            android:layout_marginBottom="24dp" />
+
+        <Button
+            android:id="@+id/deviceAdminButton"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:text="Enable Uninstall Protection"
+            android:layout_marginBottom="16dp" />
+
+        <Button
+            android:id="@+id/changePinButton"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:text="Change PIN"
+            android:layout_marginBottom="16dp" />
+
+        <Button
+            android:id="@+id/stopSharingButton"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:text="Stop Sharing Now" />
+    </LinearLayout>
+
+</LinearLayout>

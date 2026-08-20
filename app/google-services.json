@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "337820823978",
+    "project_id": "oooo-6146",
+    "storage_bucket": "oooo-6146.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:337820823978:android:9e7f8992372a63d6c3fbd3",
+        "android_client_info": {
+          "package_name": "com.macroindustry.O"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAgUnllogTeMbCLa0Qz2jMMtT_COCcvcUw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

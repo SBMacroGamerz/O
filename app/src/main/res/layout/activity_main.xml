@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0F0F1A">
+
+    <!-- Viewer's remote screen render surface, hidden until connected -->
+    <org.webrtc.SurfaceViewRenderer
+        android:id="@+id/remoteRenderer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/locationText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|center_horizontal"
+        android:layout_marginTop="24dp"
+        android:padding="8dp"
+        android:background="#801A1A2E"
+        android:textColor="#00D9FF"
+        android:textSize="13sp"
+        android:visibility="gone" />
+
+    <!-- Role picker (first launch only) -->
+    <LinearLayout
+        android:id="@+id/rolePickerPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="32dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="O"
+            android:textSize="42sp"
+            android:textStyle="bold"
+            android:textColor="#00D9FF"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Set up this device as"
+            android:textSize="16sp"
+            android:textColor="#AAAAAA"
+            android:layout_marginBottom="24dp" />
+
+        <Button
+            android:id="@+id/pickHostButton"
+            android:layout_width="240dp"
+            android:layout_height="56dp"
+            android:text="Family Member Device"
+            android:layout_marginBottom="12dp" />
+
+        <Button
+            android:id="@+id/pickViewerButton"
+            android:layout_width="240dp"
+            android:layout_height="56dp"
+            android:text="Parent Device" />
+    </LinearLayout>
+
+    <!-- Dashboard (shown once setup is complete) -->
+    <LinearLayout
+        android:id="@+id/dashboardPanel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/dashTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="O"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:textColor="#00D9FF"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/dashStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Status"
+            android:textSize="14sp"
+            android:textColor="#AAAAAA"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Host dashboard card -->
+        <LinearLayout
+            android:id="@+id/hostDashboard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <Button
+                android:id="@+id/toggleSharingButton"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="Start Sharing"
+                android:layout_marginBottom="24dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Services"
+                android:textColor="#666666"
+                android:textSize="13sp"
+                android:layout_marginBottom="8dp" />
+
+            <TextView android:id="@+id/svcDisplay" style="@style/ServiceRow" android:text="🖥️  Screen Sharing" />
+            <TextView android:id="@+id/svcAssist" style="@style/ServiceRow" android:text="♿  Remote Assistance" />
+            <TextView android:id="@+id/svcCamera" style="@style/ServiceRow" android:text="📷  Camera Access" />
+            <TextView android:id="@+id/svcAudio" style="@style/ServiceRow" android:text="🎙️  Audio" />
+            <TextView android:id="@+id/svcFiles" style="@style/ServiceRow" android:text="📁  File Sharing" />
+            <TextView android:id="@+id/svcLocation" style="@style/ServiceRow" android:text="📍  Location Sharing" />
+
+        </LinearLayout>
+
+        <!-- Viewer dashboard card -->
+        <LinearLayout
+            android:id="@+id/viewerDashboard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <Button
+                android:id="@+id/connectButton"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="View Screen"
+                android:layout_marginBottom="12dp" />
+
+            <Button
+                android:id="@+id/viewCameraButton"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="View Camera"
+                android:layout_marginBottom="12dp" />
+
+            <Button
+                android:id="@+id/browseFilesButton"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="Browse Shared Files"
+                android:layout_marginBottom="24dp" />
+
+            <TextView
+                android:id="@+id/viewerLocationCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Location: —"
+                android:textColor="#00D9FF"
+                android:padding="12dp"
+                android:background="#1A1A2E" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

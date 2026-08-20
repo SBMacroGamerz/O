@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="32dp"
+    android:background="#0F0F1A">
+
+    <TextView
+        android:id="@+id/stepProgressText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Step 1 of 6"
+        android:textColor="#666666"
+        android:textSize="13sp"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:id="@+id/stepIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="48sp"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:id="@+id/stepTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Title"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:gravity="center"
+        android:layout_marginBottom="12dp" />
+
+    <TextView
+        android:id="@+id/stepDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Description"
+        android:textSize="15sp"
+        android:textColor="#AAAAAA"
+        android:gravity="center"
+        android:layout_marginBottom="32dp" />
+
+    <TextView
+        android:id="@+id/roomCodeDisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:textColor="#00D9FF"
+        android:visibility="gone"
+        android:layout_marginBottom="24dp" />
+
+    <EditText
+        android:id="@+id/roomCodeEntry"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:hint="6-digit code"
+        android:inputType="number"
+        android:maxLength="6"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:visibility="gone"
+        android:layout_marginBottom="24dp" />
+
+    <Button
+        android:id="@+id/stepActionButton"
+        android:layout_width="240dp"
+        android:layout_height="56dp"
+        android:text="Continue" />
+
+    <Button
+        android:id="@+id/stepSkipButton"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:text="Skip for now"
+        android:background="@android:color/transparent"
+        android:textColor="#666666"
+        android:layout_marginTop="12dp" />
+
+</LinearLayout>

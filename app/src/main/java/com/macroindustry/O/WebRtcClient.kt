@@ -2,6 +2,7 @@ package com.macroindustry.O
 
 import android.content.Context
 import android.content.Intent
+import android.media.projection.MediaProjection
 import android.util.Log
 import org.webrtc.*
 import java.nio.charset.Charset

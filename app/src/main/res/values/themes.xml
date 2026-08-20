@@ -1,5 +1,6 @@
 <resources>
     <style name="Theme.RemoteO" parent="Theme.Material3.DayNight.NoActionBar" />
+<<<<<<< HEAD
 
     <style name="ServiceRow">
         <item name="android:layout_width">match_parent</item>
@@ -10,4 +11,6 @@
         <item name="android:textColor">#FFFFFF</item>
         <item name="android:textSize">15sp</item>
     </style>
+=======
+>>>>>>> 5b62811b678d87e2c728d223add01b0971044b31
 </resources>

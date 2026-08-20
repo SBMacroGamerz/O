@@ -44,7 +44,10 @@ class CaptureService : Service() {
     private var webRtcClient: WebRtcClient? = null
     private var signaling: RoomSignaling? = null
     private var locationReporter: LocationReporter? = null
+<<<<<<< HEAD
     private val fileShareManager by lazy { FileShareManager(this) }
+=======
+>>>>>>> 5b62811b678d87e2c728d223add01b0971044b31
 
     override fun onCreate() {
         super.onCreate()
@@ -77,8 +80,11 @@ class CaptureService : Service() {
     private fun beginSharing(resultCode: Int, resultData: Intent, roomCode: String) {
         Session.role = Session.Role.HOST
         Session.roomCode = roomCode
+<<<<<<< HEAD
         PairingStore.savePairingCode(this, roomCode)
         PairingStore.saveRole(this, Session.Role.HOST)
+=======
+>>>>>>> 5b62811b678d87e2c728d223add01b0971044b31
 
         signaling = RoomSignaling(roomCode)
         val client = WebRtcClient(this, isHost = true, signaling = signaling!!)
@@ -115,6 +121,7 @@ class CaptureService : Service() {
             locationReporter?.start()
         }
 
+<<<<<<< HEAD
         // Clear any stale offer/answer/candidates from a previous session on
         // this same reused code before starting a fresh handshake.
         signaling?.resetForNewSession {
@@ -123,12 +130,19 @@ class CaptureService : Service() {
             signaling?.listenForIceCandidates(isHost = true) { candidate ->
                 client.addRemoteIceCandidate(candidate)
             }
+=======
+        client.createOffer()
+        signaling?.listenForAnswer { answer -> client.handleAnswer(answer) }
+        signaling?.listenForIceCandidates(isHost = true) { candidate ->
+            client.addRemoteIceCandidate(candidate)
+>>>>>>> 5b62811b678d87e2c728d223add01b0971044b31
         }
     }
 
     private fun handleControlMessage(message: String) {
         try {
             val json = JSONObject(message)
+<<<<<<< HEAD
             when (json.optString("type")) {
                 "tap", "swipe", "longpress" -> handleGestureCommand(json)
                 "switch_camera" -> {
@@ -154,12 +168,36 @@ class CaptureService : Service() {
                     val response = fileShareManager.readFile(category, name)
                     webRtcClient?.sendControlMessage(response)
                 }
+=======
+            val svc = ControlAccessibilityService.instance
+            if (svc == null) {
+                Log.w(TAG, "Accessibility service not enabled, dropping control command")
+                return
+            }
+            when (json.optString("type")) {
+                "tap" -> svc.performTap(
+                    json.optDouble("x").toFloat(),
+                    json.optDouble("y").toFloat()
+                )
+                "swipe" -> svc.performSwipe(
+                    json.optDouble("x1").toFloat(),
+                    json.optDouble("y1").toFloat(),
+                    json.optDouble("x2").toFloat(),
+                    json.optDouble("y2").toFloat(),
+                    json.optLong("duration", 200)
+                )
+                "longpress" -> svc.performLongPress(
+                    json.optDouble("x").toFloat(),
+                    json.optDouble("y").toFloat()
+                )
+>>>>>>> 5b62811b678d87e2c728d223add01b0971044b31
             }
         } catch (e: Exception) {
             Log.w(TAG, "Bad control message: ${e.message}")
         }
     }
 
+<<<<<<< HEAD
     private fun handleGestureCommand(json: JSONObject) {
         val svc = ControlAccessibilityService.instance
         if (svc == null) {
@@ -185,6 +223,8 @@ class CaptureService : Service() {
         }
     }
 
+=======
+>>>>>>> 5b62811b678d87e2c728d223add01b0971044b31
     override fun onDestroy() {
         Session.isSharing = false
         webRtcClient?.close()
@@ -210,6 +250,10 @@ class CaptureService : Service() {
     private fun readyPendingIntent(): PendingIntent {
         val intent = Intent(this, MainActivity::class.java).apply {
             flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_SINGLE_TOP
+<<<<<<< HEAD
+=======
+            putExtra("prompt_start_sharing", true)
+>>>>>>> 5b62811b678d87e2c728d223add01b0971044b31
         }
         val flags = PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
         return PendingIntent.getActivity(this, 0, intent, flags)

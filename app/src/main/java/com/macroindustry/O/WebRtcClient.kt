@@ -43,9 +43,12 @@ class WebRtcClient(
     private var videoSource: VideoSource? = null
     private var localVideoTrack: VideoTrack? = null
 
+<<<<<<< HEAD
     private var audioSource: AudioSource? = null
     private var localAudioTrack: AudioTrack? = null
 
+=======
+>>>>>>> 5b62811b678d87e2c728d223add01b0971044b31
     var onRemoteVideoTrack: ((VideoTrack) -> Unit)? = null
     var onControlMessage: ((String) -> Unit)? = null
     var onDataChannelOpen: (() -> Unit)? = null
@@ -88,6 +91,7 @@ class WebRtcClient(
         localVideoTrack = factory.createVideoTrack("O_SCREEN_TRACK", videoSource)
     }
 
+<<<<<<< HEAD
     /**
      * HOST ONLY: switch the outgoing video track to the device camera
      * instead of the screen. Only one video source is active at a time —
@@ -166,6 +170,8 @@ class WebRtcClient(
         audioSource = null
     }
 
+=======
+>>>>>>> 5b62811b678d87e2c728d223add01b0971044b31
     fun createPeerConnection() {
         val rtcConfig = PeerConnection.RTCConfiguration(ICE_SERVERS).apply {
             sdpSemantics = PeerConnection.SdpSemantics.UNIFIED_PLAN

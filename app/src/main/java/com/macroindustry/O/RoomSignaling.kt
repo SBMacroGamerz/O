@@ -103,6 +103,7 @@ class RoomSignaling(private val roomCode: String) {
         listeners.add(reg)
     }
 
+<<<<<<< HEAD
     /**
      * Clears any stale offer/answer/candidates left over from a previous
      * session before starting a fresh handshake on the same reused
@@ -123,6 +124,8 @@ class RoomSignaling(private val roomCode: String) {
         }
     }
 
+=======
+>>>>>>> 5b62811b678d87e2c728d223add01b0971044b31
     /** Call when leaving/tearing down to stop listening (does not delete room data). */
     fun stopListening() {
         listeners.forEach { it.remove() }

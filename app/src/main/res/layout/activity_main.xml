@@ -11,10 +11,6 @@
         android:layout_height="match_parent"
         android:visibility="gone" />
 
-<<<<<<< HEAD
-=======
-    <!-- Location overlay, shown once a location update arrives from the Host -->
->>>>>>> 5b62811b678d87e2c728d223add01b0971044b31
     <TextView
         android:id="@+id/locationText"
         android:layout_width="wrap_content"
@@ -27,14 +23,9 @@
         android:textSize="13sp"
         android:visibility="gone" />
 
-<<<<<<< HEAD
     <!-- Role picker (first launch only) -->
     <LinearLayout
         android:id="@+id/rolePickerPanel"
-=======
-    <LinearLayout
-        android:id="@+id/setupPanel"
->>>>>>> 5b62811b678d87e2c728d223add01b0971044b31
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -43,10 +34,6 @@
         android:padding="32dp">
 
         <TextView
-<<<<<<< HEAD
-=======
-            android:id="@+id/titleText"
->>>>>>> 5b62811b678d87e2c728d223add01b0971044b31
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="O"
@@ -56,21 +43,13 @@
             android:layout_marginBottom="8dp" />
 
         <TextView
-<<<<<<< HEAD
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Set up this device as"
-=======
-            android:id="@+id/statusText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Choose a role"
->>>>>>> 5b62811b678d87e2c728d223add01b0971044b31
             android:textSize="16sp"
             android:textColor="#AAAAAA"
             android:layout_marginBottom="24dp" />
 
-<<<<<<< HEAD
         <Button
             android:id="@+id/pickHostButton"
             android:layout_width="240dp"
@@ -183,63 +162,6 @@
                 android:padding="12dp"
                 android:background="#1A1A2E" />
         </LinearLayout>
-=======
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="24dp">
-
-            <Button
-                android:id="@+id/hostRoleButton"
-                android:layout_width="140dp"
-                android:layout_height="wrap_content"
-                android:text="Be Host"
-                android:layout_marginEnd="12dp" />
-
-            <Button
-                android:id="@+id/viewerRoleButton"
-                android:layout_width="140dp"
-                android:layout_height="wrap_content"
-                android:text="Be Viewer" />
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/roomCodeText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:textSize="28sp"
-            android:textStyle="bold"
-            android:textColor="#00D9FF"
-            android:layout_marginBottom="16dp" />
-
-        <EditText
-            android:id="@+id/roomCodeInput"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:hint="Enter 6-digit code"
-            android:inputType="number"
-            android:maxLength="6"
-            android:textAlignment="center"
-            android:visibility="gone"
-            android:layout_marginBottom="16dp" />
-
-        <Button
-            android:id="@+id/actionButton"
-            android:layout_width="220dp"
-            android:layout_height="56dp"
-            android:text="Start Sharing"
-            android:visibility="gone"
-            android:layout_marginBottom="16dp" />
-
-        <Button
-            android:id="@+id/accessibilityButton"
-            android:layout_width="220dp"
-            android:layout_height="48dp"
-            android:text="Enable Accessibility Access"
-            android:visibility="gone" />
->>>>>>> 5b62811b678d87e2c728d223add01b0971044b31
 
     </LinearLayout>
 

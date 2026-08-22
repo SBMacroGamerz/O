@@ -9,7 +9,6 @@
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
-<<<<<<< HEAD
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -32,12 +31,6 @@
 
     <uses-feature android:name="android.hardware.camera" android:required="false" />
     <uses-feature android:name="android.hardware.microphone" android:required="false" />
-=======
-    <uses-permission android:name="android.permission.CAMERA" tools:node="remove" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
->>>>>>> 5b62811b678d87e2c728d223add01b0971044b31
 
     <application
         android:allowBackup="true"
@@ -57,7 +50,6 @@
         </activity>
 
         <activity
-<<<<<<< HEAD
             android:name=".FileBrowserActivity"
             android:exported="false" />
 
@@ -66,8 +58,6 @@
             android:exported="false" />
 
         <activity
-=======
->>>>>>> 5b62811b678d87e2c728d223add01b0971044b31
             android:name=".ChildSettingsActivity"
             android:exported="false" />
 
@@ -82,7 +72,6 @@
             </intent-filter>
         </receiver>
 
-<<<<<<< HEAD
         <!-- Foreground service: owns MediaProjection + WebRTC peer connection.
              Declares camera/microphone types too since Android 14+ blocks
              those captures from a background-launching context otherwise. -->
@@ -90,13 +79,6 @@
             android:name=".CaptureService"
             android:exported="false"
             android:foregroundServiceType="mediaProjection|camera|microphone" />
-=======
-        <!-- Foreground service: owns MediaProjection + WebRTC peer connection -->
-        <service
-            android:name=".CaptureService"
-            android:exported="false"
-            android:foregroundServiceType="mediaProjection" />
->>>>>>> 5b62811b678d87e2c728d223add01b0971044b31
 
         <!-- Accessibility service: injects taps/swipes received over the WebRTC data channel -->
         <service
